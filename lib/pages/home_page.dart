@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_qr_reader/pages/direcciones_page.dart';
 import 'package:flutter_qr_reader/pages/mapa_page.dart';
 import 'package:flutter_qr_reader/pages/mapas_page.dart';
-import 'package:flutter_qr_reader/providers/db_provider.dart';
 import 'package:flutter_qr_reader/providers/ui_provider.dart';
 import 'package:flutter_qr_reader/widgets/custom_navigator.dart';
 import 'package:flutter_qr_reader/widgets/scan_bottom.dart';
@@ -38,9 +37,6 @@ class _HomePageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final uiProvider = Provider.of<UiProvider>(context);
     final currentIndex = uiProvider.selectedMenuOpt;
-
-    final tempScan = new ScanModel(valor: 'http://google.com');
-    DBProvider.db.nuevoScan(tempScan);
 
     switch (currentIndex) {
       case 0:
